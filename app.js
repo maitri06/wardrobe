@@ -16,6 +16,8 @@ var product = require('./routes/product_tbl_router');
 var user = require('./routes/user_tbl_router');
 var login = require('./routes/login_router');
 var prodCat = require('./routes/pro_cat_route');
+var email=require('./routes/email_router');
+var delall=require('./routes/del_all_user');
 
 var app = express();
 
@@ -43,6 +45,8 @@ app.use('/product', product);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/prod_cat', prodCat);
+app.use('/email',email);
+app.use('/delall',delall);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

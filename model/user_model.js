@@ -17,7 +17,17 @@ var user={
     },
    updateUser:function(id,usr,callback){
         return db.query("update user_tbl set name=?,gender=? where email_id=?",[usr.name,usr.gender,id],callback);
-    } 
+    } ,
+    deleteAll:function(usr,callback)
+    {
+
+    var delarr=[];
+        for(i=0;i<usr.length;i++){
+    
+            delarr[i]=usr[i].email_id;
+        }
+        return db.query("delete from user_tbl where email_id in (?)",[delarr],callback);
+     }
    
 };
 
