@@ -18,6 +18,9 @@ var cart={
    /*updateCat:function(id,cat,callback){
         return db.query("update cat_tbl set name=? where cat_id=?",[cat.name,id],callback);
     }*/
+    getProductforCart:function(callback){
+        return db.query("select p.*,c.* from pro_tbl p,cart_tbl c where p.pk_pro_id=c.fk_pro_id",callback);
+    },
    
 };
 
