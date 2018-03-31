@@ -19,6 +19,7 @@ var prodCat = require('./routes/pro_cat_route');
 var email=require('./routes/email_router');
 var delalluser=require('./routes/del_all_user');
 var delallpro=require('./routes/del_all_pro');
+var delallfeedback=require('./routes/de_all_feedback');
 var procart=require('./routes/pro_cart_route');
 
 var app = express();
@@ -50,6 +51,7 @@ app.use('/prod_cat', prodCat);
 app.use('/email',email);
 app.use('/delalluser',delalluser);
 app.use('/delallpro',delallpro);
+app.use('/delallfeedback',delallfeedback);
 app.use('/procart',procart);
 
 

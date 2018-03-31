@@ -18,6 +18,17 @@ var feedback={
    /*updateCat:function(id,cat,callback){
         return db.query("update cat_tbl set name=? where cat_id=?",[cat.name,id],callback);
     }*/
+    deleteAll:function(feed,callback)
+    {
+
+    var delarr=[];
+        for(i=0;i<feed.length;i++){
+    
+            delarr[i]=feed[i].pk_f_id;
+        }
+        return db.query("delete from feedback_tbl where pk_f_id in (?)",[delarr],callback);
+     }
+   
    
 };
 

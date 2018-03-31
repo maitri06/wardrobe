@@ -10,7 +10,7 @@ var cart={
         return db.query("select * from cart_tbl where pk_cart_id=?",[id],callback);
     },
     addCart:function(car,callback){
-        return db.query("insert into cart_tbl values(?,?,?,?,?)",[car.pk_cart_id,car.cart_qty,car.cart_amount,car.fk_email_id,car.fk_pro_id],callback);
+        return db.query("insert into cart_tbl values(?,?,?,?,?)",[null,1,car.cart_amount,car.fk_email_id,car.fk_pro_id],callback);
     },
     deleteCart:function(id,callback){
         return db.query("delete from cart_tbl where pk_cart_id=?",[id],callback);
