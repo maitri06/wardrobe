@@ -20,6 +20,14 @@ var cart={
     }*/
     getProductforCart:function(callback){
         return db.query("select p.*,c.* from pro_tbl p,cart_tbl c where p.pk_pro_id=c.fk_pro_id",callback);
+    },
+    getCartByEmail:function(id,callback){
+
+        return db.query("select * from cart_tbl where fk_email_id=?",[id],callback);
+    },
+    getCal:function(id,callback){
+
+        return db.query("select * from cart_tbl where cart_amount=?",[id],callback);
     }
     
    

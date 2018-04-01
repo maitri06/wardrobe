@@ -5,7 +5,7 @@ var cart=require('../model/cart_model');
 router.get('/:id?',function(req,res,next){
 
     if(req.params.id){
-        cart.getCartById(req.params.id,function(err,rows){
+        cart.getCartByEmail(req.params.id,function(err,rows){
             if(err){
                 res.json(err);
             }
@@ -14,6 +14,7 @@ router.get('/:id?',function(req,res,next){
             }
         });
     }
+   
     else{
     cart.getAllCart(function(err,rows){
 
