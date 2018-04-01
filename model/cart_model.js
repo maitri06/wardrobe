@@ -20,7 +20,8 @@ var cart={
     }*/
     getProductforCart:function(callback){
         return db.query("select p.*,c.* from pro_tbl p,cart_tbl c where p.pk_pro_id=c.fk_pro_id",callback);
-    },
+    }
+    
    
 };
 

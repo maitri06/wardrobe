@@ -1,4 +1,3 @@
-
 var db=require('../dbconnection');
 var category={
 

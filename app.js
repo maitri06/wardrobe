@@ -13,13 +13,14 @@ var cart = require('./routes/cart_tbl_router');
 var feedback = require('./routes/feedback_tbl_router');
 var order = require('./routes/order_tbl_router');
 var product = require('./routes/product_tbl_router');
+var combo=require('./routes/combo_tbl_router');
 var user = require('./routes/user_tbl_router');
 var login = require('./routes/login_router');
 var prodCat = require('./routes/pro_cat_route');
 var email=require('./routes/email_router');
 var delalluser=require('./routes/del_all_user');
 var delallpro=require('./routes/del_all_pro');
-var delallfeedback=require('./routes/de_all_feedback');
+var delallfeedback=require('./routes/del_all_feedback');
 var procart=require('./routes/pro_cart_route');
 
 var app = express();
@@ -45,6 +46,7 @@ app.use('/cart', cart);
 app.use('/feedback', feedback);
 app.use('/order', order);
 app.use('/product', product);
+app.use('/combo',combo)
 app.use('/user', user);
 app.use('/login', login);
 app.use('/prod_cat', prodCat);
