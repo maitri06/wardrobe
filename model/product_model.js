@@ -10,7 +10,7 @@ var product={
         return db.query("select * from pro_tbl where pk_pro_id=?",[id],callback);
     },
     addProduct:function(prod,callback){
-        return db.query("insert into pro_tbl values(?,?,?,?,?,?,?,?,?)",[null,prod.pro_name,prod.pro_price,prod.pro_color,prod.pro_img1,prod.pro_img2,prod.pro_img3,prod.pro_desci,prod.fk_cat_id],callback);
+        return db.query("insert into pro_tbl values(?,?,?,?,?,?,?,?,?,?,?)",[null,prod.pro_name,prod.pro_price,prod.pro_color,prod.pro_img1,prod.pro_img2,prod.pro_img3,prod.pro_desci,prod.pro_brand,prod.pro_gen,prod.fk_cat_id],callback);
     },
     deleteProduct:function(id,callback){
         return db.query("delete from pro_tbl where pk_pro_id=?",[id],callback);
@@ -23,6 +23,9 @@ var product={
     },
     getProductByCategoryId:function(callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id",callback);
+    },
+    getProductByCategoryName:function(id,callback){
+        return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and c.cat_name=?",[id],callback);
     },
     deleteAll:function(prod,callback)
     {

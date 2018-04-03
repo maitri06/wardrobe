@@ -23,7 +23,7 @@ var cart={
     },
     getCartByEmail:function(id,callback){
 
-        return db.query("select * from cart_tbl where fk_email_id=?",[id],callback);
+        return db.query("select p.*,c.* from pro_tbl p,cart_tbl c  where c.fk_pro_id=p.pk_pro_id and c.fk_email_id=?",[id],callback);
     },
     getCal:function(id,callback){
 
