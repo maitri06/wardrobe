@@ -22,6 +22,7 @@ var delalluser=require('./routes/del_all_user');
 var delallpro=require('./routes/del_all_pro');
 var delallfeedback=require('./routes/del_all_feedback');
 var procart=require('./routes/pro_cart_route');
+var procart1=require('./routes/pro_cart1_router');
 
 var app = express();
 
@@ -55,6 +56,7 @@ app.use('/delalluser',delalluser);
 app.use('/delallpro',delallpro);
 app.use('/delallfeedback',delallfeedback);
 app.use('/procart',procart);
+app.use('/procart1',procart1);
 
 
 // catch 404 and forward to error handler

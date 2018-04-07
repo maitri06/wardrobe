@@ -10,7 +10,7 @@ var cart={
         return db.query("select * from cart_tbl where pk_cart_id=?",[id],callback);
     },
     addCart:function(car,callback){
-        return db.query("insert into cart_tbl values(?,?,?,?,?)",[null,1,car.cart_amount,car.fk_email_id,car.fk_pro_id],callback);
+        return db.query("insert into cart_tbl values(?,?,?,?,?)",[null,car.cart_qty,car.cart_amount,car.fk_email_id,car.fk_pro_id],callback);
     },
     deleteCart:function(id,callback){
         return db.query("delete from cart_tbl where pk_cart_id=?",[id],callback);
@@ -24,6 +24,10 @@ var cart={
     getCartByEmail:function(id,callback){
 
         return db.query("select p.*,c.* from pro_tbl p,cart_tbl c  where c.fk_pro_id=p.pk_pro_id and c.fk_email_id=?",[id],callback);
+    },
+    getCartByProduct:function(id,callback){
+
+        return db.query("select p.*,c.* from pro_tbl p,cart_tbl c  where c.fk_pro_id=p.pk_pro_id and c.pk_cart_id=?",[id],callback);
     },
     getCal:function(id,callback){
 
