@@ -24,6 +24,7 @@ var product={
     getProductByCategoryId:function(callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id",callback);
     },
+   
 
     getProductByPrice1:function(callback){
         return db.query("select * from pro_tbl p JOIN cat_tbl c ON p.fk_cat_id=c.pk_cat_id WHERE p.pro_price BETWEEN 499 AND 999",callback);
@@ -43,6 +44,9 @@ var product={
     getProductByCategoryName:function(id,callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and c.cat_name=?",[id],callback);
     },
+   /* getProductByGen:function(callback){
+        return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and p.pro_gen=?",[id],callback);
+    },*/
     getProductByBrandName:function(id,callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and p.pro_brand=?",[id],callback);
     },

@@ -29,6 +29,7 @@ var proprice3=require('./routes/pro_price3_route');
 var proprice4=require('./routes/pro_price4_route');
 var proprice5=require('./routes/pro_price5_route');
 var probrand=require('./routes/pro_brand_route');
+//var progen=require('./routes/pro_gen_route');
 
 var app = express();
 
@@ -69,6 +70,7 @@ app.use('/proprice3',proprice3);
 app.use('/proprice4',proprice4);
 app.use('/proprice5',proprice5);
 app.use('/probrand',probrand);
+//app.use('/progen',progen);
 
 
 // catch 404 and forward to error handler
