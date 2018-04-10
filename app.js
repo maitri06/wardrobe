@@ -23,6 +23,12 @@ var delallpro=require('./routes/del_all_pro');
 var delallfeedback=require('./routes/del_all_feedback');
 var procart=require('./routes/pro_cart_route');
 var procart1=require('./routes/pro_cart1_router');
+var proprice1=require('./routes/pro_price1_route');
+var proprice2=require('./routes/pro_price2_route');
+var proprice3=require('./routes/pro_price3_route');
+var proprice4=require('./routes/pro_price4_route');
+var proprice5=require('./routes/pro_price5_route');
+var probrand=require('./routes/pro_brand_route');
 
 var app = express();
 
@@ -57,6 +63,12 @@ app.use('/delallpro',delallpro);
 app.use('/delallfeedback',delallfeedback);
 app.use('/procart',procart);
 app.use('/procart1',procart1);
+app.use('/proprice1',proprice1);
+app.use('/proprice2',proprice2);
+app.use('/proprice3',proprice3);
+app.use('/proprice4',proprice4);
+app.use('/proprice5',proprice5);
+app.use('/probrand',probrand);
 
 
 // catch 404 and forward to error handler
