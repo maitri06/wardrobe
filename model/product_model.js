@@ -43,8 +43,8 @@ var product={
     },
     getProductByCategoryName:function(id,callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and c.cat_name=?",[id],callback);
-    },
-   /* getProductByGen:function(callback){
+    },/*
+   getProductByGen:function(id,callback){
         return db.query("select p.*,c.* from pro_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id and p.pro_gen=?",[id],callback);
     },*/
     getProductByBrandName:function(id,callback){
